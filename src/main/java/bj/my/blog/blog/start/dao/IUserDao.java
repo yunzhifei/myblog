@@ -10,12 +10,12 @@ import java.util.List;
 @Mapper
 public interface IUserDao {
     String TABLE_NAME = " user ";
-    String INSERT_FILEDS = " name,password,salt";
-    String SELECT_FIELDS = " id, " + INSERT_FILEDS;
+    String INSERT_FIELDS = " name,password,salt";
+    String SELECT_FIELDS = " id, " + INSERT_FIELDS;
 
     @Select({"select " + SELECT_FIELDS + " from " + TABLE_NAME   })
     List<User> selectAllUser();
 
-    @Insert({"insert into " + TABLE_NAME + " ( " + INSERT_FILEDS + " ) " + "values ( " + "#{name},#{password},#{salt}" +" )"})
+    @Insert({"insert into " + TABLE_NAME + " ( " + INSERT_FIELDS + " ) " + "values ( " + "#{name},#{password},#{salt}" +" )"})
     int addUser(User user);
 }

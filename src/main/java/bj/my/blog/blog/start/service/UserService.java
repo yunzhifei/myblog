@@ -36,7 +36,7 @@ public class UserService {
         // TODO: 2017/8/1 前端加密
         User user = userDao.selectUserByUserName(userName);
         if(null != user && EncryptAndDecodeUtil.MD5(password+user.getSalt()).equals(password)){
-            //登录成功添加ticket
+            //登录成功添加ticket，
         }
         return "";
     }

@@ -8,6 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import java.util.Scanner;
+
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class ApplicationTests {
@@ -15,12 +17,7 @@ public class ApplicationTests {
     IUserDao userDao;
     @Test
     public void contextLoads() {
-        User user = new User();
-        user.setName("liu");
-        user.setPassword("cao");
-        user.setSalt("nimabi");
-        System.out.println("user = " + user);
-        userDao.addUser(user);
+
     }
 
 }

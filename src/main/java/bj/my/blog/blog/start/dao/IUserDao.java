@@ -18,4 +18,7 @@ public interface IUserDao {
 
     @Insert({"insert into " + TABLE_NAME + " ( " + INSERT_FIELDS + " ) " + "values ( " + "#{name},#{password},#{salt}" +" )"})
     int addUser(User user);
+
+    @Select({"select " + SELECT_FIELDS + " from " + TABLE_NAME + " where name=#{userName}"})
+    User selectUserByUserName(String userName);
 }

@@ -10,4 +10,6 @@ public class User {
     String name;
     String password;
     String salt;
+    long userId;
+    String phone;
 }

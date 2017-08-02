@@ -20,9 +20,13 @@ public class ApplicationTests {
         user.setName("liu");
         user.setPassword("cao");
         user.setSalt("nimabi");
+        user.setPhone("234567896");
+        user.setUserId(6);
         System.out.println("user = " + user);
+
         long s = userDao.addUser(user);
         System.out.println("s = " + s);
+
         System.out.println("user = " + user);
     }
 

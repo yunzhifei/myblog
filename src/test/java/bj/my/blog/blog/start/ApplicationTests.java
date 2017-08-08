@@ -1,8 +1,6 @@
 package bj.my.blog.blog.start;
 
-import bj.my.blog.blog.start.config.RedisConfig;
 import bj.my.blog.blog.start.dao.IUserDao;
-import bj.my.blog.blog.start.model.User;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,7 +25,8 @@ public class ApplicationTests {
         redisTemplate.execute(new RedisCallback<Boolean>() {
             @Override
             public Boolean doInRedis(RedisConnection redisConnection) throws DataAccessException {
-                redisConnection.set("w".getBytes(), "g".getBytes());
+
+                redisConnection.lPush("s".getBytes(),"asfdad".getBytes());
                 return true;
             }
         });

@@ -1,6 +1,7 @@
 package bj.my.blog.blog.start;
 
 import bj.my.blog.blog.start.dao.IUserDao;
+import bj.my.blog.blog.start.service.MailService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,18 +19,12 @@ public class ApplicationTests {
     IUserDao userDao;
     @Autowired
     RedisTemplate<?, ?> redisTemplate;
+    @Autowired
+    MailService mailService;
 
     @Test
     public void contextLoads() {
-
-        redisTemplate.execute(new RedisCallback<Boolean>() {
-            @Override
-            public Boolean doInRedis(RedisConnection redisConnection) throws DataAccessException {
-
-                redisConnection.lPush("s".getBytes(),"asfdad".getBytes());
-                return true;
-            }
-        });
+        mailService.sendMailSimple("1143047851@qq.com","测试","测试服务！");
 
     }
 

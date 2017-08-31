@@ -3,6 +3,8 @@ package bj.my.blog.blog.start;
 import bj.my.blog.blog.start.config.Girl;
 import bj.my.blog.blog.start.dao.IUserDao;
 import bj.my.blog.blog.start.service.MailService;
+import javassist.ClassPath;
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,11 +29,17 @@ public class ApplicationTests {
     private String va;
     @Autowired
     Girl girl;
+    @Before
+    public void init(){
+        System.out.println("girl = " + girl);
+//        ClassPath classPath = ClassPath
+    }
     @Test
     public void contextLoads() {
-//        mailService.sendMailSimple("1143047851@qq.com","测试","测试服务！");
-        System.out.println("va = " + va);
-        System.out.println("girl = " + girl);
+////        mailService.sendMailSimple("1143047851@qq.com","测试","测试服务！");
+//        System.out.println("va = " + va);
+//        System.out.println("girl = " + girl);
+        System.out.println("va = " );
     }
 
 }

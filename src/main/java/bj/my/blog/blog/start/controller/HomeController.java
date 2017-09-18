@@ -15,6 +15,6 @@ public class HomeController {
         model.addAttribute("name","dear");
         userService.getAllUser();
         System.out.println("userService = " + userService.getAllUser());
-        return "index";
+        return "contact";
     }
 }

@@ -39,9 +39,6 @@ public class UserService {
             responseMap.put("error", "");
             return responseMap;
         }
-        //用户名和密码都符合要求了可以验证密码和用户名了
-        //解密前端传来的字符串
-        // TODO: 2017/8/1 前端加密
         User user = userDao.selectUserByUserName(userName);
         if (null == user) {
             responseMap.put("error", "用户不存在！");

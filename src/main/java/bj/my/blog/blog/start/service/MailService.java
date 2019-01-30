@@ -19,13 +19,18 @@ import java.util.Map;
 
 @Service
 public class MailService {
+
+
     private Logger logger = LoggerFactory.getLogger(MailService.class);
     @Autowired
     JavaMailSender mailSender;
+
     @Value("${spring.mail.username}")
     private String from;
 
+
     public void sendMailSimple(String to, String subject, String content) {
+
         SimpleMailMessage message = new SimpleMailMessage();
         message.setFrom(from);
         message.setTo(to);
